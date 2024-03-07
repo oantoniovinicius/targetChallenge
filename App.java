@@ -50,8 +50,8 @@ public class App {
 
     String stringReversa = inverterString(inputString);
 
-    System.out.println("String original: " + inputString);
-    System.out.println("\nString com caracteres invertidos: " + stringReversa);
+    System.out.print("String original: " + inputString);
+    System.out.println("\nString com caracteres invertidos: " + stringReversa +"\n");
 
     entrada.close();
 
