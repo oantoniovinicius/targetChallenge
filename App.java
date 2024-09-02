@@ -1,16 +1,18 @@
+package targetDesafio.src;
+
 import java.util.Scanner;
 
-public class App {
-  public static void questao01(){
-    int indice = 13;
+public class targetDesafio {
+    public static void questao03(){
+    int indice = 12;
     int soma = 0;
-    int k = 0;
+    int k = 1;
 
-    while(k<indice){
+    while(k < indice){
       k += 1;
       soma += k;
     }
-    System.out.println("Questão 01) O resultado da soma é: "+ soma +"\n\n");
+    System.out.println(soma);
   }
 
   private static boolean verificaFibonacci(int numero) {
@@ -29,60 +31,46 @@ public class App {
     return false;
   }
 
-  public static void questao02(){
+  public static void questao01(){
     Scanner entrada = new Scanner(System.in);
 
-    System.out.print("Questão 02) Informe um número para a sequencia de Fibonacci: ");
+    System.out.println("Informe um número para a sequencia de Fibonacci:");
     int numero = entrada.nextInt();
 
     if(verificaFibonacci(numero)) {
-      System.out.println("O número " + numero + " informado pertence à sequencia de Fibonacci\n\n");
+      System.out.println("O número " + numero + " informado pertence à sequencia de Fibonacci");
     } else {
-      System.out.println("O número " + numero + " informado NÃO pertence à sequencia de Fibonacci\n\n");
+      System.out.println("O número " + numero + " informado NÃO pertence à sequencia de Fibonacci");
     }
-  }
-
-  public static void questao05(){
-    Scanner entrada = new Scanner(System.in);
-
-    System.out.println("Questão 05) Informe uma string para ser invertida: ");
-    String inputString = entrada.nextLine();
-
-    String stringReversa = inverterString(inputString);
-
-    System.out.print("String original: " + inputString);
-    System.out.println("\nString com caracteres invertidos: " + stringReversa +"\n");
 
     entrada.close();
-
   }
 
-  private static String inverterString(String input) {
-    char[] chars = input.toCharArray();
+  public static void questao02(){
+    Scanner entrada = new Scanner(System.in);
 
-    //ponteirios start e end para trocar os caracteres em seus indices
-    int start = 0;
-    int end = chars.length - 1; //tamanho da string - 1
+    System.out.println("Informe uma string:");
+    String texto = entrada.nextLine();
 
-    while (start < end) {
-        //troca os caracteres no start e no end
-        char temp = chars[start];
-        chars[start] = chars[end];
-        chars[end] = temp;
-
-        //move os ponteiros
-        start++;
-        end--;
+    int count = 0;
+    for (char c : texto.toCharArray()) {
+        if (c == 'a' || c == 'A') {
+            count++;
+        }
     }
 
-    //retorna uma nova string ja invertida
-    return new String(chars);
-  }
+    if (count > 0) {
+        System.out.println("A letra 'a' aparece " + count + " vezes na string.");
+    } else {
+        System.out.println("A letra 'a' não foi encontrada na string.");
+    }
 
+    entrada.close();
+}
   public static void main(String[] args) throws Exception {
     questao01();
-    questao02();
-    questao05();
+    //questao02();
+    //questao03();
   }
 }
   
